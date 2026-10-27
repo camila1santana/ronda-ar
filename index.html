@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RONDA en tu espacio</title>
+<meta name="description" content="Mirá el Kit RONDA Oficina, los blends y RONDA Fría en tamaño real con la cámara de tu celular.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
+<style>
+  :root { --yerba: #12321F; --hueso: #F4F1E8; --crema: #FBEDD3; --sol: #F2B705; --calabaza: #C98320; --gris: #A9B8A9; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--yerba); color: var(--hueso); font-family: "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif; }
+  .envoltura { max-width: 980px; margin: 0 auto; padding: max(20px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 40px max(18px, env(safe-area-inset-left, 0px)); }
+  header { display: flex; align-items: center; gap: 12px; padding: 8px 0 18px; }
+  .marca { font-family: Archivo, sans-serif; font-weight: 700; font-stretch: 118%; font-size: 22px; letter-spacing: .01em; }
+  h1 { font-size: clamp(30px, 7vw, 52px); font-weight: 800; letter-spacing: -.035em; line-height: 1.04; margin: 8px 0 10px; }
+  .bajada { color: var(--gris); font-size: 16px; line-height: 1.5; max-width: 52ch; margin: 0 0 22px; }
+  .pestanas { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .pestanas button { font: inherit; font-weight: 700; font-size: 14px; border: 1.5px solid rgba(244,241,232,.35); background: transparent; color: var(--hueso); padding: 9px 16px; border-radius: 999px; cursor: pointer; }
+  .pestanas button[aria-selected="true"] { background: var(--crema); color: var(--yerba); border-color: var(--crema); }
+  .visor { position: relative; background: radial-gradient(120% 80% at 50% 30%, #FFFFFF 0%, #EDE7DA 70%); border-radius: 18px; overflow: hidden; }
+  model-viewer { width: 100%; height: min(62vh, 560px); --poster-color: transparent; background: transparent; }
+  .boton-ar { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); font: inherit; font-weight: 800; font-size: 16px; background: var(--yerba); color: var(--crema); border: 0; padding: 14px 22px; border-radius: 999px; box-shadow: 0 8px 24px rgba(0,0,0,.25); display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
+  .medida { position: absolute; left: 14px; top: 12px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #3B4A40; background: rgba(255,255,255,.75); padding: 5px 10px; border-radius: 999px; }
+  .info { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .info div { border-top: 2px solid var(--sol); padding-top: 8px; font-size: 14px; color: var(--gris); }
+  .info b { display: block; color: var(--hueso); font-size: 15px; }
+  .pasos { margin-top: 26px; font-size: 14px; color: var(--gris); line-height: 1.55; }
+  .pasos b { color: var(--hueso); }
+  footer { margin-top: 30px; font-size: 12px; color: var(--gris); }
+  :focus-visible { outline: 3px solid var(--sol); outline-offset: 3px; }
+  @media (max-width: 600px) { .info { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="envoltura">
+  <header>
+    <svg viewBox="0 0 120 120" width="40" height="40" aria-hidden="true"><g id="emblema"></g></svg>
+    <span class="marca">RONDA</span>
+  </header>
+  <h1>RONDA en tu espacio</h1>
+  <p class="bajada">Elegí un producto y tocá <b>“Ver en tu espacio”</b>: la cámara lo coloca sobre tu mesa en tamaño real. Funciona en iPhone y Android, sin instalar nada.</p>
+
+  <div class="pestanas" role="tablist" aria-label="Productos">
+    <button role="tab" aria-selected="true" data-modelo="kit">Kit Oficina</button>
+    <button role="tab" aria-selected="false" data-modelo="blends">Blends</button>
+    <button role="tab" aria-selected="false" data-modelo="latas">RONDA Fría</button>
+  </div>
+
+  <div class="visor">
+    <model-viewer id="visor" src="kit.glb" alt="Kit RONDA Oficina en 3D" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor" camera-controls touch-action="pan-y" auto-rotate rotation-per-second="18deg" shadow-intensity="1" shadow-softness=".8" exposure="1.05" environment-image="neutral" camera-orbit="20deg 72deg auto" interaction-prompt="none">
+      <button slot="ar-button" class="boton-ar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M12 7l5 3v5l-5 3-5-3v-5z"/></svg>
+        Ver en tu espacio
+      </button>
+    </model-viewer>
+    <span class="medida" id="medida">Tamaño real · termo 27 cm</span>
+  </div>
+
+  <div class="info" id="info"></div>
+
+  <p class="pasos"><b>Cómo usarlo:</b> tocá “Ver en tu espacio”, apuntá la cámara a una mesa o al piso y mové el celular despacio hasta que aparezca el producto. Podés acercarte y rodearlo. Si el botón no aparece, tu navegador no soporta realidad aumentada: podés girar el modelo con el dedo.</p>
+  <footer>RONDA es una marca ficticia creada para el Trabajo Práctico Integrador de Investigación de Mercado (UNLaM, 2026). Modelos 3D de diseño propio.</footer>
+</div>
+<script>
+  // Emblema de 8 puntos (mismo dibujo que el logo de la marca)
+  (function () {
+    var g = document.getElementById("emblema"), s = "";
+    for (var i = 0; i < 8; i++) {
+      var a = (-90 + 45 * i) * Math.PI / 180;
+      s += '<circle cx="' + (60 + 40 * Math.cos(a)).toFixed(2) + '" cy="' + (60 + 40 * Math.sin(a)).toFixed(2) + '" r="5.6" fill="' + (i === 0 ? "#C98320" : "#FBEDD3") + '"/>';
+    }
+    s += '<path d="M63 46.5 L69 33.5 L71 32" stroke="#FBEDD3" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="49" y="45" width="22" height="3" rx="1.5" fill="#FBEDD3"/><path d="M50.5 49.6 C45.5 55.5 44.5 65.5 48 71.5 C51 77.2 69 77.2 72 71.5 C75.5 65.5 74.5 55.5 69.5 49.6 Z" fill="#FBEDD3"/>';
+    g.innerHTML = s;
+  })();
+
+  var DATOS = {
+    kit: { alt: "Kit RONDA Oficina en 3D", medida: "Tamaño real · termo 27 cm", info: [["Termo compacto", "Acero, verde yerba. Mantiene el agua caliente toda la jornada."], ["Mate térmico", "Doble pared, virola de acero y bombilla con filtro."], ["Yerbera hermética", "Para la mochila o para dejar fija en la oficina."]] },
+    blends: { alt: "Paquetes RONDA Clásica, Foco y Calma en 3D", medida: "Tamaño real · paquete 24 cm", info: [["Clásica", "Con palo, bajo polvo y estacionamiento natural."], ["Foco", "Con menta y romero, para rendir en la jornada."], ["Calma", "Cedrón, manzanilla y peperina, para bajar un cambio."]] },
+    latas: { alt: "Latas RONDA Fría en 3D", medida: "Tamaño real · lata 355 ml", info: [["Limón & jengibre", "Cítrica y refrescante."], ["Pomelo & menta", "Notas cítricas y frescura herbal."], ["Lista para tomar", "Para el verano, el viaje o cuando no hay termo a mano."]] }
+  };
+  var visor = document.getElementById("visor"), info = document.getElementById("info"), medida = document.getElementById("medida");
+  function mostrar(clave) {
+    var d = DATOS[clave];
+    visor.src = clave + ".glb"; visor.alt = d.alt; medida.textContent = d.medida;
+    info.innerHTML = d.info.map(function (x) { return "<div><b>" + x[0] + "</b>" + x[1] + "</div>"; }).join("");
+    document.querySelectorAll(".pestanas button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.modelo === clave ? "true" : "false"); });
+  }
+  document.querySelectorAll(".pestanas button").forEach(function (b) { b.addEventListener("click", function () { mostrar(b.dataset.modelo); }); });
+  var inicial = (location.hash || "").replace("#", "");
+  mostrar(DATOS[inicial] ? inicial : "kit");
+</script>
+</body>
+</html>
