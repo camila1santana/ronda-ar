@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>RONDA en tu espacio</title>
-<meta name="description" content="Mirá el Kit RONDA Oficina, los blends y RONDA Fría en tamaño real con la cámara de tu celular.">
+<title>Kit RONDA en tu espacio</title>
+<meta name="description" content="Mirá el Kit RONDA Oficina en tamaño real con la cámara de tu celular.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
 <script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
@@ -40,14 +40,9 @@
     <svg viewBox="0 0 120 120" width="40" height="40" aria-hidden="true"><g id="emblema"></g></svg>
     <span class="marca">RONDA</span>
   </header>
-  <h1>RONDA en tu espacio</h1>
-  <p class="bajada">Elegí un producto y tocá <b>“Ver en tu espacio”</b>: la cámara lo coloca sobre tu mesa en tamaño real. Funciona en iPhone y Android, sin instalar nada.</p>
+  <h1>El Kit RONDA, en tu mesa</h1>
+  <p class="bajada">Termo, mate y yerbera de la línea Oficina. Tocá <b>“Ver en tu espacio”</b> y la cámara los coloca sobre tu mesa en tamaño real. Funciona en iPhone y Android, sin instalar nada.</p>
 
-  <div class="pestanas" role="tablist" aria-label="Productos">
-    <button role="tab" aria-selected="true" data-modelo="kit">Kit Oficina</button>
-    <button role="tab" aria-selected="false" data-modelo="blends">Blends</button>
-    <button role="tab" aria-selected="false" data-modelo="latas">RONDA Fría</button>
-  </div>
 
   <div class="visor">
     <model-viewer id="visor" src="kit.glb" alt="Kit RONDA Oficina en 3D" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ar-placement="floor" camera-controls touch-action="pan-y" auto-rotate rotation-per-second="18deg" shadow-intensity="1" shadow-softness=".8" exposure="1" tone-mapping="neutral" environment-image="neutral" camera-orbit="0deg 75deg auto" interaction-prompt="none">
@@ -62,7 +57,7 @@
   <div class="info" id="info"></div>
 
   <p class="pasos"><b>Cómo usarlo:</b> tocá “Ver en tu espacio”, apuntá la cámara a una mesa o al piso y mové el celular despacio hasta que aparezca el producto. Podés acercarte y rodearlo. Si el botón no aparece, tu navegador no soporta realidad aumentada: podés girar el modelo con el dedo.</p>
-  <footer>RONDA es una marca ficticia creada para el Trabajo Práctico Integrador de Investigación de Mercado (UNLaM, 2026). Kit Oficina: formas 3D generadas con Tripo AI y texturas de diseño propio. Blends y latas: modelos de diseño propio.</footer>
+  <footer>RONDA es una marca ficticia creada para el Trabajo Práctico Integrador de Investigación de Mercado (UNLaM, 2026). Formas 3D generadas con Tripo AI y texturas de diseño propio.</footer>
 </div>
 <script>
   // Emblema de 8 puntos (mismo dibujo que el logo de la marca)
@@ -76,21 +71,8 @@
     g.innerHTML = s;
   })();
 
-  var DATOS = {
-    kit: { alt: "Kit RONDA Oficina en 3D", medida: "Tamaño real · termo 27 cm", info: [["Termo compacto", "Acero, verde yerba. Mantiene el agua caliente toda la jornada."], ["Mate térmico", "Doble pared, virola de acero y bombilla con filtro."], ["Yerbera hermética", "Para la mochila o para dejar fija en la oficina."]] },
-    blends: { alt: "Paquetes RONDA Clásica, Foco y Calma en 3D", medida: "Tamaño real · paquete 24 cm", info: [["Clásica", "Con palo, bajo polvo y estacionamiento natural."], ["Foco", "Con menta y romero, para rendir en la jornada."], ["Calma", "Cedrón, manzanilla y peperina, para bajar un cambio."]] },
-    latas: { alt: "Latas RONDA Fría en 3D", medida: "Tamaño real · lata 355 ml", info: [["Limón & jengibre", "Cítrica y refrescante."], ["Pomelo & menta", "Notas cítricas y frescura herbal."], ["Lista para tomar", "Para el verano, el viaje o cuando no hay termo a mano."]] }
-  };
-  var visor = document.getElementById("visor"), info = document.getElementById("info"), medida = document.getElementById("medida");
-  function mostrar(clave) {
-    var d = DATOS[clave];
-    visor.src = clave + ".glb"; visor.alt = d.alt; medida.textContent = d.medida;
-    info.innerHTML = d.info.map(function (x) { return "<div><b>" + x[0] + "</b>" + x[1] + "</div>"; }).join("");
-    document.querySelectorAll(".pestanas button").forEach(function (b) { b.setAttribute("aria-selected", b.dataset.modelo === clave ? "true" : "false"); });
-  }
-  document.querySelectorAll(".pestanas button").forEach(function (b) { b.addEventListener("click", function () { mostrar(b.dataset.modelo); }); });
-  var inicial = (location.hash || "").replace("#", "");
-  mostrar(DATOS[inicial] ? inicial : "kit");
+  var info = document.getElementById("info");
+  info.innerHTML = [["Termo compacto", "Acero, verde yerba. Mantiene el agua caliente toda la jornada."], ["Mate térmico", "Doble pared, virola de acero y bombilla con filtro."], ["Yerbera hermética", "Para la mochila o para dejar fija en la oficina."]].map(function (x) { return "<div><b>" + x[0] + "</b>" + x[1] + "</div>"; }).join("");
 </script>
 </body>
 </html>
